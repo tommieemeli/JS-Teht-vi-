@@ -5,6 +5,54 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/styles.css">
 	</head>
+	<script>
+		var napit = document.getElementsByTagName('button');
+		var otsikot = document.getElementsByTagName('h2');
+		var peet = document.getElementsByTagName('p');
+		
+		function changeHeading() {						
+			var nappi1 = napit[0];
+			var otsikko4 = otsikot[3];
+
+			otsikko4.innerHTML="Modified heading !";
+		}
+
+		function changeStyle() {
+			var otsikko2 = otsikot[1];
+			var nappi2 = napit[1];
+
+			otsikko2.style.color="red";
+			otsikko2.style.fontSize="100px";
+			otsikko2.style.backgroundColor="yellow";
+		}
+
+		function sitäSuntätä() {
+			var uusi = document.createElement('p');
+			var uusiPaikka = document.getElementsByTagName('p');
+			var
+			uusi.innerHTML = "<strong>Lorem ipsum</strong> dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu. Sed arcu lectus auctor vitae, consectetuer et venenatis eget velit. ";
+			uusi.setAttribute('id', 'uusiData');
+			uusiPaikka[3].appendChild(uusi);
+			uusi.style.fontStyle = "italics";
+			document.body.style.backgroundColor = "blue";
+		}
+
+		function hide() {
+			var l = document.getElementsByTagName('label');
+			l[0].style.display = "none";
+		}
+
+		function show() {
+
+
+		}
+
+		function ylläriPylläri() {
+			var s = document.getElementById('surpise');
+			s.style.fontSize = "20px";
+		}
+
+	</script>
 	<body class="ws4">
 		<h1>Workshop 4: DOM Scripting</h1>
 		<hr />
@@ -15,8 +63,8 @@
 		<p>&nbsp;Below you will see three buttons. Edit the source code and add an onClick-events to these buttons. Use Developer Console to find the </p>
 		<p>
 		  <button onclick="changeHeading();">Button 1</button>
-		  <button onclick="secondButton">Button 2</button>
-		  <button onclick="">Button 3</button>
+		  <button onclick="changeStyle()">Button 2</button>
+		  <button onclick="sitäSuntätä()">Button 3</button>
 		</p>
 
 		<ul>
@@ -41,7 +89,7 @@
 			</label>
 			<br>
 			<label>
-				<input type="checkbox" name="CheckboxGroup1" value="3" id="CheckboxGroup1_2"> 
+				<input onchange="ylläriPylläri()" type="checkbox" name="CheckboxGroup1" value="3" id="CheckboxGroup1_2"> 
 				<span id="surpise">Surprise</span>
 			</label>
 		</p>
