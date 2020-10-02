@@ -30,7 +30,7 @@
 		function sitäSuntätä() {
 			var uusi = document.createElement('p');
 			var uusiPaikka = document.getElementsByTagName('p');
-			uusi,innerHTML = "<strong>Lorem ipsum</strong> dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu. Sed arcu lectus auctor vitae, consectetuer et venenatis eget velit. ";
+			uusi.innerHTML = "<strong>Lorem ipsum</strong> dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu. Sed arcu lectus auctor vitae, consectetuer et venenatis eget velit. ";
 			uusi.setAttribute('id', 'uusiData');
 			uusiPaikka[3].appendChild(uusi);
 			uusi.style.fontStyle = "italics";
@@ -48,6 +48,21 @@
 		function ylläriPylläri() {
 			var s = document.getElementById('surpise');
 			s.style.fontSize = "20px";
+		}
+
+		function changeImage() {	
+			var data = document.getElementById('mySelect').value;
+			var image = document.getElementById('carimage');
+
+			if (data == "Audi") {
+				image.src = "";
+			}
+			else if (data == "BMW") {
+				image.src = "";
+			}
+			else if (data == "Mercedes") {
+				image.src = "";
+			}
 		}
 
 	</script>
