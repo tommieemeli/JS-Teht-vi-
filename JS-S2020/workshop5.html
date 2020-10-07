@@ -5,6 +5,22 @@
     <title>Workshop 5</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
+  <script>
+    
+    function validateForm() {
+      var x = document.forms["myForm"] ["email"].value ;
+      var y = document.forms["myForm"] ["comment"].value;
+      
+      if(x == "" || y == "" || x.length < 6 || x.length > 15 || y.length < 50) {
+        alert("Täytäthän kentät!\nSähköpostiosoite tulisi olla vähintään 6 merkkiä pitkä ja sisältää @ merkki !")
+        return false;
+      } else {
+        alert("Email: " + x);
+        alert("Comment: " + y);
+      }
+    }
+
+  </script>
   <body>
     <h1>Workshop 5: Smart Forms -- demo</h1>
     <hr />
@@ -44,7 +60,7 @@
       feedback to the user. Preferably by displaying some text message on the
       page, next to the input field. See the lecture slides for demo.
     </p>
-    <form onsubmit="">
+    <form name="myForm" action="#" onsubmit="return validateForm()" method="POST">
       <div class="no-border">
         <label
           >Email address:<br />
