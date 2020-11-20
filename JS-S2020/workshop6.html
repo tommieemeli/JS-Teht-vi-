@@ -5,6 +5,41 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/styles.css">
 	</head>
+	<script>
+
+	// funktio joka kerää ja tallentaa datan localstorageen ja esittää tulokset
+	// checkboxien data tallennetaan vain jos ne on ruksittu 
+	function getData() { 
+		var dessu = document.getElementById('destination').value;
+		var arri = document.getElementById('arrival').value;
+		localStorage.destination = dessu;
+		localStorage.arrival = arri;
+
+		var netti = document.getElementById('CheckboxGroup1_0').value;
+		if(document.getElementById('CheckboxGroup1_0').checked == true) {
+			localStorage.internet = netti;
+		}
+		var aacee = document.getElementById('CheckboxGroup1_1').value;
+		if(document.getElementById('CheckboxGroup1_1').checked == true) {
+			localStorage.ac = aacee;
+		}
+		var minibaari = document.getElementById('CheckboxGroup1_2').value;
+		if(document.getElementById('CheckboxGroup1_2').checked == true) {
+			localStorage.minibar = minibaari;
+		}
+		var auto = document.getElementById('CheckboxGroup1_3').value;
+		if(document.getElementById('CheckboxGroup1_3').checked == true) {
+			localStorage.car = auto;
+		}
+		var bastu = document.getElementById('CheckboxGroup1_4').value;
+		if(document.getElementById('CheckboxGroup1_4').checked == true) {
+			localStorage.sauna = bastu;
+		}
+			
+		document.getElementById('määränpää').innerHTML = "Määränpää: " + localStorage.destination;
+		document.getElementById('ajankohta').innerHTML = "Ajankohta: " + localStorage.arrival;		
+	}
+	</script>
 	<body class="ws6" onload="">
 		<h1>Workshop 6: Using Localstorage</h1>
 		<hr />
@@ -35,6 +70,10 @@
 			  <input type="button" name="button" id="button" value="Reserve" onclick="getData()">
 			</p>
 		</div>
+		<p>Varaus:</p>
+		<div id="määränpää"></div>
+		<div id="ajankohta"></div>		
+		<div id="tulokset"></div>
 		<hr/>
 		<div>
 			<h2>Exercise 2: Reloading the saved data</h2>
