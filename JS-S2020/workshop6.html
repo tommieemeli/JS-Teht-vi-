@@ -39,8 +39,13 @@
 		document.getElementById('määränpää').innerHTML = "Määränpää: " + localStorage.destination;
 		document.getElementById('ajankohta').innerHTML = "Ajankohta: " + localStorage.arrival;		
 	}
+
+	function showData() {
+		document.getElementById('sessiondata').innerHTML = localStorage.destination + " " + localStorage.arrival + " + " + localStorage.car + " + " + localStorage.sauna + " + " + localStorage.internet + " + " + localStorage.minibar;
+	}
+
 	</script>
-	<body class="ws6" onload="">
+	<body class="ws6" onload="showData()">
 		<h1>Workshop 6: Using Localstorage</h1>
 		<hr />
 		<h2>Exercise 1: Saving the entered data</h2>
